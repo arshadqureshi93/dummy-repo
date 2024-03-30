@@ -1,0 +1,178 @@
+
+<div style="text-align: center;font-size: 15px;">
+  <h3 style="margin-top: -10px;"><b>प्रोसिडीग रजिष्टर</b></h3>
+  <div style="padding-bottom: 10px;margin-top: -10px;"><b>"तात्काळ सभासद समितीची दैनिक सभा कार्यवृतांत"</b></div>
+  <div><b>दिनांक :-  {{ doc.proceeding_date.split('-')[2] ~ '-' ~ doc.proceeding_date.split('-')[1] ~ '-' ~ doc.proceeding_date.split('-')[0] }}</b></div>
+</div> 
+
+
+{% set weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"] %}
+{% set date_parts = doc.proceeding_date.split('-') %}
+{% set year = date_parts[0] | int %}
+{% set month = date_parts[1] | int %}
+{% set day = date_parts[2] | int %}
+{% set weekday_index = (year + year // 4 - year // 100 + year // 400 + [0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4][month - 1] + day) % 7 %}
+  <div style="font-size: 15px;word-spacing: 5px;">
+   <br> <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;संस्थेचे अध्यक्ष श्री. जयेशचंद्र रमण रामादे यांच्या अध्यक्षते खाली सभा घेण्यात आली. सभेत खालील प्रस्ताव पारीत करण्यात आले.</div><br>
+     <div>विषय क्रं. १ :- मागील सभेचा कार्यवृतांत वाचून कायम करणे.</div><br>
+     <div>ठराव क्रं. १ :- मागील तात्काळ सभासद समितीची दैनिक सभा दिनांक----------- चा कार्यवृतांत सभेपुढे सादर करण्यात आला. प्रस्तावावर सविस्तर चर्चा करण्यात आली.दिनांक चा कार्यवृतांत सर्व सम्मतीने मंजुर करण्यात आले.</div>
+  </div>
+
+
+<div>
+    <table style="border-collapse: collapse; border: 1px solid black; width: 100%;" cellspacing="0" cellpadding="5">
+        <thead>
+            <tr>
+                <th style="border: 1px solid black; width: 10%; padding: 10px;font-size:14px;">अनु क्रमांक.</th>
+                <th style="border: 1px solid black; width: 50%; padding: 10px;font-size:14px;">खातेधारकाचे नाव</th>
+                <th style="border: 1px solid black; width: 40%; padding: 10px;font-size:14px;">शाखा</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for member in doc.proceeding_members %}
+            <tr>
+                <td style="border: 1px solid black; padding: 10px;font-size:13px;text-align:center;">{{ _(loop.index) }}</td>
+                <td style="border: 1px solid black; padding: 10px;font-size:13px;">{{ member.share_holder_name }}</td>
+                <td style="border: 1px solid black; padding: 10px;font-size:13px;">{{ member.branch }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+<div>
+  <table style="border-collapse: collapse; border: 1px solid black; width: 100%;" cellspacing="0" cellpadding="5">
+      <thead>
+          <tr>
+              <th style="border: 1px solid black; width: 10%; padding: 10px;font-size:14px;">अनु क्रमांक.</th>
+              <th style="border: 1px solid black; width: 50%; padding: 10px;font-size:14px;">पदाधिकारी व संचालकांचे नाव</th>
+              <th style="border: 1px solid black; width: 30%; padding: 10px;font-size:14px;">पद</th>
+              <th style="border: 1px solid black; width: 10%; padding: 10px;font-size:14px;">स्वाक्षरी</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td style="border: 1px solid black; padding: 10px;font-size:13px;text-align:center;">1</td>
+              <td style="border: 1px solid black; padding: 10px;font-size:13px;">श्री जयेशचंद्र रमण रामादे</td>
+              <td style="border: 1px solid black; padding: 10px;font-size:13px;">अध्यक्ष</td>
+              <td style="border: 1px solid black; padding: 10px;font-size:13px;">-----</td>
+          </tr>
+          <tr>
+            <td style="border: 1px solid black; padding: 10px;font-size:13px;text-align:center;">2</td>
+            <td style="border: 1px solid black; padding: 10px;font-size:13px;">श्री दत्तात्रय श्यामराव सावंत</td>
+            <td style="border: 1px solid black; padding: 10px;font-size:13px;">उपाध्यक्ष</td>
+            <td style="border: 1px solid black; padding: 10px;font-size:13px;">-----</td>
+        </tr>
+        <tr>
+          <td style="border: 1px solid black; padding: 10px;font-size:13px;text-align:center;">3</td>
+          <td style="border: 1px solid black; padding: 10px;font-size:13px;">श्री जितेंद्र इंद्रराज रंगारी</td>
+          <td style="border: 1px solid black; padding: 10px;font-size:13px;">संचालक</td>
+          <td style="border: 1px solid black; padding: 10px;font-size:13px;">-----</td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid black; padding: 10px;font-size:13px;text-align:center;">4</td>
+        <td style="border: 1px solid black; padding: 10px;font-size:13px;">श्रीमती शितला रमण रामादे</td>
+        <td style="border: 1px solid black; padding: 10px;font-size:13px;">स्चालीका</td>
+        <td style="border: 1px solid black; padding: 10px;font-size:13px;">-----</td>
+    </tr>
+    <tr>
+      <td style="border: 1px solid black; padding: 10px;font-size:13px;text-align:center;">5</td>
+      <td style="border: 1px solid black; padding: 10px;font-size:13px;">श्री विलास रामलाल वासनिक</td>
+      <td style="border: 1px solid black; padding: 10px;font-size:13px;">मुख्य कार्यकारी अधिकारी</td>
+      <td style="border: 1px solid black; padding: 10px;font-size:13px;">-----</td>
+  </tr>
+  <tr>
+    <td style="border: 1px solid black; padding: 10px;font-size:13px;text-align:center;">6</td>
+    <td style="border: 1px solid black; padding: 10px;font-size:13px;">श्री वैभव मुरलीमनोहर खंडेलवाल</td>
+    <td style="border: 1px solid black; padding: 10px;font-size:13px;">सि.ए. (असि.जी.एम.)</td>
+    <td style="border: 1px solid black; padding: 10px;font-size:13px;">-----</td>
+  </tr>
+</tbody>
+  </table>
+</div>
+
+
+
+
+
+ <div style="font-size: 15px;word-spacing: 5px;"><br> 
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;संस्थेचे अध्यक्ष श्री. जयेशचंद्र रमण रामादे यांच्या अध्यक्षते खाली सभा घेण्यात आली. सभेत खालील प्रस्ताव पारीत करण्यात आले.</div><br>
+  <div>विषय क्रं. १ :- मागील सभेचा कार्यवृतांत वाचून कायम करणे.</div><br>
+  <div>ठराव क्रं. १ :- मागील तात्काळ सभासद समितीची दैनिक सभा दिनांक {{ doc.proceeding_date.split('-')[2] ~ '-' ~ doc.proceeding_date.split('-')[1] ~ '-' ~ doc.proceeding_date.split('-')[0] }} चा कार्यवृतांत सभेपुढे सादर <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;करण्यात आला. प्रस्तावावर सविस्तर चर्चा करण्यात आली. दिनांक {{ doc.proceeding_date.split('-')[2] ~ '-' ~ doc.proceeding_date.split('-')[1] ~ '-' ~ doc.proceeding_date.split('-')[0] }} चा कार्यवृतांत सर्व <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;सम्मतीने मंजुर करण्यात आले.</div>
+    <div style="margin-right:100px;">
+<div style="text-align:left; margin-left:350px;">
+    <p>प्रस्तावक :- श्री जितेंद्र इंद्रराज रंगारी</p>   
+    <p>अनुमोदक :- श्री वैभव मुरलीमनोहर खंडेलवाल</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ठराव सर्व संमत्तीने मंजुर</p>
+</div>
+</div>
+    
+</div>
+
+
+ <div style="margin-right:100px;">
+  <div style="display: flex;justify-content:space-between;">
+      <div style="text-align:center;">
+          <b><p>अध्यक्ष<br>
+          सहयोग मल्टीस्टेट क्रेडिट को-ऑपरेटिव्ह सोसायटी लि. <br>
+          मुख्यालय गोंदिया</p></b>
+      </div>
+      <div style="text-align:center;">
+        <b>  <p>मुख्य कार्यकरी अधिकारी<br>
+          सहयोग मल्टीस्टेट क्रेडिट को-ऑपरेटिव्ह सोसायटी लि. <br>
+          मुख्यालय गोंदिया</p></b>
+  
+      </div>
+  </div>
+  </div>
+
+
+
+  <h2>next page begins</h2>
+ <div style="font-size: 15px;word-spacing: 5px;"><br> 
+ <div>विषय क्रं. २ :- संस्थेचे नियमित सभासद बनविण्यास मंजुरी देणे.</div><br>
+  <div>ठराव क्रं. २ :- संस्थेचे नियमित सभासदत्व मिळावे याकरिता कार्यालयास अर्ज मिळाले, ते अर्ज कार्यालयीन<br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;टिप्पणी पूर्ण करुन मंजुरी करित प्रस्ताव सभेपुढे सादर करण्यात आले.</div>
+    <div style="margin-right:100px;">
+    </div>
+
+    <div style="font-size: 15px;word-spacing: 5px;"><br> 
+<div style="text-align:left; margin-left:350px;">
+    <p>प्रस्तावक :- श्री जितेंद्र इंद्रराज रंगारी</p>   
+    <p>अनुमोदक :- श्री वैभव मुरलीमनोहर खंडेलवाल</p>
+    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ठराव सर्व संमत्तीने मंजुर</p>
+</div>
+</div>
+    
+</div>
+
+
+
+
+<div>
+  <table style="border-collapse: collapse; border: 1px solid black; width: 100%;" cellspacing="0" cellpadding="5">
+      <thead>
+          <tr>
+              <th style="border: 1px solid black; width: 10%; padding: 10px;font-size:14px;">अनु क्रमांक.</th>
+              <th style="border: 1px solid black; width: 30%; padding: 10px;font-size:14px;">अर्जदारांचे पूर्ण नाव</th>
+              <th style="border: 1px solid black; width: 25%; padding: 10px;font-size:14px;">ठिकाण</th>
+              <th style="border: 1px solid black; width: 20%; padding: 10px;font-size:14px;">शाखा</th>
+              <th style="border: 1px solid black; width: 15%; padding: 10px;font-size:14px;">मंजूर/नामंजूर</th>
+          </tr>
+      </thead>
+      <tbody>
+          {% for member in doc.proceeding_members %}
+          <tr>
+              <td style="border: 1px solid black; padding: 10px;font-size:13px;text-align:center;">{{ _(loop.index) }}</td>
+              <td style="border: 1px solid black; padding: 10px;font-size:13px;">{{ member.share_holder_name }}</td>
+              <td style="border: 1px solid black; padding: 10px;font-size:13px;">{{ member.address if member.address else 'N/A' }}{{ ', ' + member.taluka if member.taluka and (member.address or member.city) else member.taluka if member.taluka else '' }}{{ ', ' + member.city if member.city and (member.address or member.taluka) else member.city if member.city else '' }}</td>
+              <td style="border: 1px solid black; padding: 10px;font-size:13px;">{{ member.branch }}</td>
+              <td style="border: 1px solid black; padding: 10px;font-size:13px;">{{ member.status }}</td>
+          </tr>
+          {% endfor %}
+      </tbody>
+  </table>
+</div>

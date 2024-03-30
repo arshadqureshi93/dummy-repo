@@ -1,0 +1,161 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.card-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+.card-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-cell {
+  flex: 1;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.card {
+  background: #E1E5F2;
+  border: 1px solid #ddd;
+  border-radius:13px;
+  padding: 44px;
+  text-align: center;
+  margin: 5px;
+}
+.card-last {
+  padding: 31px;
+  text-align: center;
+  margin: 5px;
+}
+.card-bottom{
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius:13px;
+  padding: 10px;
+  text-align: center;
+  margin: 5px;
+  background: #E1E5F2;
+}
+.card-bottom-last{
+  background-color: #f0f0f0;
+  border: 1px solid #ddd;
+  border-radius:13px;
+  padding: 10px;
+  text-align: center;
+  margin: 5px;
+  background: #BFDBF7;
+}
+
+.titles{
+  position: absolute;
+  margin-top: -45px;
+  font-weight: 400;
+  margin-left: 93px;
+  font-size: 20px;
+}
+.titles-last{
+  position: absolute;
+  margin-top: -70px;
+  font-size: 35px;
+  margin-left: -76px;
+  font-weight: lighter;
+}
+.values{
+  position: absolute;
+  /* padding: 5px; */
+  margin-left: 93px;
+  font-size: 30px;
+  font-weight: bold;
+  margin-top: -25px;
+
+}
+.values-last{
+  position: absolute;
+  margin-left: -70px;
+}
+.values-last button{
+  margin: 3px;
+  padding: 18px;
+  width: 100px;
+  border-radius: 13px;
+  font-size: 15px;
+  text-align: center;
+  border: 0px;
+  
+}
+.border{
+  padding: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 2px dashed black;
+  border-radius: 13px;
+  
+}
+.border-last{
+  padding: 33px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  
+}
+.border-last .values-last{
+align-items: center;    
+}
+@media (max-width: 768px) {
+  .card-cell {
+    flex: 0 0 100%;
+  }
+}
+.border img{
+  width: 35px;
+  height: auto;
+}
+.maindiv
+{
+  display:flex;
+}
+.id_card{
+  flex: 1;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.card_id{
+  background: #E1E5F2;
+  border: 1px solid #ddd;
+  border-radius:13px;
+  padding: 127px;
+  text-align: center;
+  margin: 5px;
+}
+.titles_id{
+  position: absolute;
+  margin-top: -35px;
+  font-size: 30px;
+  margin-left: -30px;
+  font-weight: lighter;
+}
+.values_id{
+  position: absolute;
+  padding: 5px;
+  margin-left: -30px;
+  font-weight: bold;
+}
+.img1{
+width: 75px;
+  float: left;
+  margin-top: -31px;
+  margin-bottom: -27px;
+}
+
+.wel{
+    margin-left:200px;
+}
+.img_id{
+  width:40px;
+}

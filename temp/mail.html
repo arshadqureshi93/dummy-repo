@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>New Support Ticket</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "Poppins", Arial, sans-serif;
+      }
+
+      .container {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        border-radius: 11px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        border: 2px solid #42b883; /* Added green border */
+      }
+
+      .header {
+        display: flex;
+        align-items: center; /* Align items vertically in the center */
+        background-color: #42b883;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 8px 8px 0 0;
+        margin-bottom: -5px;
+      }
+
+      .header img {
+        width: 30px; /* Adjust the width of the logo */
+        height: 30px; /* Adjust the height of the logo */
+        margin-right: 10px; /* Add some spacing between the logo and text */
+        animation: shakeBuzzer 0.8s infinite; /* Apply the shaking animation */
+      }
+
+      /* Buzzer shaking animation keyframes */
+      @keyframes shakeBuzzer {
+        0% {
+          transform: rotateZ(0);
+        }
+        25% {
+          transform: rotateZ(-10deg);
+        }
+        50% {
+          transform: rotateZ(10deg);
+        }
+        75% {
+          transform: rotateZ(-10deg);
+        }
+        100% {
+          transform: rotateZ(0);
+        }
+      }
+
+      .header h2 {
+        margin: 0;
+        margin-bottom: 3px; /* Reduced margin between h2 and h4 */
+      }
+
+      .content {
+        padding: 10px 15px;
+      }
+
+      .ticket-details {
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+      }
+
+      .ticket-details strong {
+        display: inline-block;
+        min-width: 70px;
+      }
+
+      .button-container {
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      .button {
+        display: inline-block;
+        background-color: #42b883;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 11px;
+        text-decoration: none;
+        width: 320px;
+      }
+
+      .location {
+        margin-left: 25px;
+        margin-top: -10px; /* Adjusted margin-top value */
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 10px;
+      }
+
+      .location strong {
+        display: inline-block;
+        min-width: 70px;
+      }
+
+      .location span {
+        flex: 1;
+        font-size: 13px;
+        font-weight: 400;
+        color: #42b883;
+      }
+
+      .employee-name {
+        border-top: 1px solid #ccc;
+        padding-top: 5px;
+        margin-top: 0;
+      }
+
+      strong {
+        color: #ff7e67;
+        font-size: 14px;
+      }
+
+      span {
+        font-size: 13px;
+        font-weight: 400;
+        color: #42b883;
+      }
+    </style>
+  </head>
+  <body>
+    Dear {{doc.skip_reporting_employee_name}},<br />
+    I wanted to let you know that {{doc.ap_name}} has submitted their Performance 
+    Appraisal form for your review. Please take a moment to go through it and provide your rating for 
+    the appraisee,{{doc.full_name}}.
+    Thank you for your attention to this matter.
+    <div class="container">
+      <div class="header">
+        <img
+          src="https://cdn-icons-png.flaticon.com/128/1182/1182718.png"
+          alt="Notification Logo"
+          style="height: 65px; width: 65px"
+        />
+        <div>
+          <h2 style="margin-bottom: 0px">Appraisee Details</h2>
+          <h4 style="margin: 0">{{doc.name}}</h4>
+        </div>
+      </div>
+      <div class="content">
+        <div class="ticket-details">
+          <div style="display: flex; justify-content: space-between">
+            <div style="flex: 1; text-align: left">
+              <strong>Name</strong><br />
+              <span>{{ doc.full_name }}</span>
+            </div>
+            <div style="flex: 1; text-align: center">
+              <strong>Designation</strong><br />
+              <span>{{ doc.designation }}</span>
+            </div>
+            <div style="flex: 1; text-align: right">
+              <strong>Phone</strong><br />
+              <span>{{ doc.cell_number }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="ticket-details">
+          <div style="display: flex; justify-content: space-between">
+            <div style="flex: 1; text-align: left">
+              <strong>Branch</strong><br />
+              <span>{{ doc.branch }}</span>
+            </div>
+            <div style="flex: 1; text-align: center">
+              <strong>Division</strong><br />
+              <span>{{ doc.division}}</span>
+            </div>
+            <div style="flex: 1; text-align: right">
+              <strong>Region</strong><br />
+              <span>{{ doc.region }}</span>
+            </div>
+          </div>
+        </div>
+        <div class="button-container">
+          <a
+            href="{{ 'http://123.63.89.76/app/performance-appraisal/' + doc.name }}"
+            class="button"
+            >View PMS</a
+          >
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
